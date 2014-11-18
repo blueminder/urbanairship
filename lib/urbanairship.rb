@@ -129,6 +129,10 @@ module Urbanairship
       do_request(:delete, "/api/segments/#{id}", :authenticate_with => :master_secret)
     end
 
+    def perpush_detail_report(id)
+      do_request(:get, "/api/reports/perpush/detail/#{id}", :authenticate_with => :master_secret)
+    end
+
     private
 
     def do_request(http_method, path, options = {})
